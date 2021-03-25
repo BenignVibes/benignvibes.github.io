@@ -1,49 +1,47 @@
-<div id="footer">
-  <ul>
-    {% if site.github_username %}
-    <li>
-      {% include icon-github.html username=site.github_username %}
-    </li>
-    {% endif %}
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>{{ site.footer.location }}</h3>
+                        <p>
+                            {% for adress in site.address %}
+                                {{ adress.line }} <br>
+		                    {% endfor %}
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>{{ site.footer.social }}</h3>
+                        <ul class="list-inline">
+                            {% for network in site.social %}
+                            <li>
+                                <a href="{{ network.url }}" class="btn-social btn-outline"><i class="fa fa-fw fa-{{ network.title }}"></i></a>
+                            </li>
+		                    {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>{{ site.footer.credits }}</h3>
+                        <p>{{ site.credits }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; {{ site.footer.copyright }} 20{{ site.time | date: '%y' }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    {% if site.twitter_username %}
-    <li>
-      {% include icon-twitter.html username=site.twitter_username %}
-    </li>
-    {% endif %}
-
-    <!-- <li id="github">
-      <a href="https://github.com/cwruRobotics" target="_blank">
-        <img alt="GitHub" src="res/footer/github-logo.svg" />
-      </a>
-    </li> -->
-    <li id="facebook">
-      <a href="https://www.facebook.com/cwrurobotics" target="_blank">
-        <img alt="Facebook" src="res/footer/facebook-logo.svg" />
-      </a>
-    </li>
-    <li id="instagram">
-      <a href= "https://www.instagram.com/cwrubotix/" target="_blank">
-        <img alt="Instagram" src="res/footer/instagram-icon.jpg" />
-      </a>
-    </li>
-    <!-- <li id="twitter">
-      <a href="https://twitter.com/cwrubotix" target="_blank">
-        <img alt="Twitter" src="res/footer/twitter-logo.svg" />
-      </a>
-    </li> -->
-    <li id="youtube">
-      <a href="https://www.youtube.com/channel/UCFxYzjLEY09YFLx_UKSINIw" target="_blank">
-        <img alt="YouTube" src="res/footer/youtube-icon.svg" />
-      </a>
-    </li>
-    <li id="email">
-      <a href="mailto:{{ site.email }}">
-        <img alt="Email" src="res/footer/email-icon.svg" />
-      </a>
-    </li>
-  </ul>
-  <p id="copyright">
-    Copyright © 2020 CWRUbotix
-  </p>
-</div>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
